@@ -7,7 +7,7 @@ internal class ProcessContainer(val maxCapacity: Int) {
     private val processes: MutableList<Process> = mutableListOf()
 
     @Synchronized
-    internal fun addOrReject(process: Process) {
+    fun addOrReject(process: Process) {
         if (processes.size < maxCapacity) {
             processes.add(process)
         } else {
